@@ -807,7 +807,7 @@ body.bk-on .fab-book{display:none;}
         <div class="sbox full" style="padding:4px 14px;"><div id="clList"></div></div>
         <div class="sbox full" style="margin-top:18px;">
           <div class="slbl">Importar clientes desde mi Excel</div>
-          <textarea id="clImportTxt" class="cl-tpl" style="margin-top:8px;" placeholder="Pega aquí dos columnas copiadas de tu Excel (nombre y teléfono), una persona por línea. Ejemplo:&#10;María García   3001234567&#10;Juan Pérez   3109876543"></textarea>
+          <textarea id="clImportTxt" class="cl-tpl" style="margin-top:8px;" placeholder=" aquí dos columnas copiadas de tu Excel (nombre y teléfono), una persona por línea. Ejemplo:&#10;María García   3001234567&#10;Juan Pérez   3109876543"></textarea>
           <button class="btn btn-s" id="clImportBtn" style="width:100%;margin-top:10px;">Importar a la base de clientes</button>
           <div id="clImportMsg"></div>
         </div>
@@ -886,7 +886,7 @@ body.bk-on .fab-book{display:none;}
 'use strict';
 // ═══════════════════════════════════════════
 // ⬇ PEGA AQUÍ LA URL DE TU APPS SCRIPT
-const SCRIPT_URL = "PEGAR_URL_AQUI";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwYDoX3U1sZ_lB7cspjJTYw3mvgkoh5xpTC71_3nwG8K2NihRWh7w7p4WunqUYvgddadA/exec";
 // ═══════════════════════════════════════════
 const PHONE="573226391407", PIN="2580", OS=9*60, OE=19*60+30;
 const DEFAULT_STAFF=[{id:'elber',name:'Elber',role:'Barbero'},{id:'melvin',name:'Melvin',role:'Barbero'},{id:'sofia',name:'Sofía',role:'Manicurista'},{id:'andrea',name:'Andrea',role:'Manicurista'},{id:'daniela',name:'Daniela',role:'Estilista'}];
@@ -1644,7 +1644,7 @@ function clParse(text){
 }
 $('clImportBtn').onclick=async()=>{
   const out=clParse($('clImportTxt').value),msg=$('clImportMsg'),btn=$('clImportBtn');
-  if(!out.rows.length){msg.innerHTML='<div class="msg-err">No encontré clientes. Pega una persona por línea: nombre y teléfono.</div>';return;}
+  if(!out.rows.length){msg.innerHTML='<div class="msg-err">No encontré clientes.  una persona por línea: nombre y teléfono.</div>';return;}
   if(!cfg){msg.innerHTML='<div class="msg-err">Conecta el Apps Script para importar.</div>';return;}
   btn.disabled=true;let added=0,skipped=0;
   try{
